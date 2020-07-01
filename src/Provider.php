@@ -5,6 +5,7 @@ namespace Koteezy\Google;
 use SocialiteProviders\Manager\OAuth2\User;
 use Laravel\Socialite\Two\ProviderInterface;
 use SocialiteProviders\Manager\OAuth2\AbstractProvider;
+use Illuminate\Support\Arr;
 
 class Provider extends AbstractProvider implements ProviderInterface
 {
@@ -67,10 +68,10 @@ class Provider extends AbstractProvider implements ProviderInterface
     {
         return (new User())->setRaw($user)->map([
             'id' => $user['sub'],
-            'nickname' => array_get($user, 'nickname'),
-            'name' => array_get($user, 'name'),
-            'email' => array_get($user, 'email'),
-            'avatar' => array_get($user, 'picture'),
+            'nickname' => Arr::get($user, 'nickname'),
+            'name' => Arr::get($user, 'name'),
+            'email' => Arr::get($user, 'email'),
+            'avatar' => Arr::get($user, 'picture'),
         ]);
     }
 
