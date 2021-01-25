@@ -2,7 +2,7 @@
     "name": "koteezy/google",
     "description": "Google OAuth2 Provider for Laravel Socialite",
     "license": "MIT",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "authors": [
         {
             "name": "Brian Faust",
